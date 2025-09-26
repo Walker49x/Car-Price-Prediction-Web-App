@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="">Home</a>
+            <a href="">Contact us</a>
+            <a href="">Info</a>
+        </nav>
+    </header>
+
+    <div class="carousel">
+        <div class="list">
+            <div class="item">
+                <img src="{{ url_for('static', filename='images/2022-f1-car-7-1626364058.jpg') }}" alt="Image">
+                 <div class="content">
+                    <div class="author">Team Insight seekers</div>
+                    <div class="title">Design Slide</div>
+                    <div class="topic">Rate your car</div>
+
+                    <div class="buttons">
+                    <button>SEE MORE</button>
+                    </div>
+                 </div>   
+            </div>
+            <div class="item">
+                <img src="{{ url_for('static', filename='images/360_F_224693468_CGthyeACnALW69HlZq9d6IvgA5vXggQj.jpg') }}" alt="Image">
+                 <div class="content">
+                     <div class="author">Our cutting-edge AI and Machine Learning algorithm redefine the way you shop for cars</div>
+                     <div class="title">Design Slide</div>
+                     <div class="topic">Rate your car</div>
+                     <div class="des">Our cutting-edge AI and Machine Learning algorithm redefine the way you shop for cars</div>
+
+                     <div class="buttons">
+                         <button>SEE MORE</button>
+                     </div>
+                 </div>   
+            </div>
+            <div class="item">
+                <img src="{{ url_for('static', filename='images/wp11706924.jpg') }}" alt="Image">
+                 <div class="content">
+                     <div class="author">Team Insight seekers</div>
+                     <div class="title">Predict Price</div>
+                     <div class="topic">Rate your car</div>
+                     <div class="des">Our cutting-edge AI and Machine Learning algorithm redefine the way <br>
+                         you shop for cars</div>
+
+                     <div class="buttons">
+                         <button>SEE MORE</button>
+                     </div>
+                     <div class="Inputs">
+
+                        <form method="post" action="#" accept-charset="UTF-8">
+                            <div class="col-10 form group">
+                                <label><b>Select Company:</b></label>
+                                <select class="first" name="company" id="company" required="1" onchange="load_car_models(this.id,'car_models')">
+        
+                                   {% for company in companies %}
+        
+        
+                                      <option value="{{ company }}">{{ company }}</option>
+                                   {% endfor %}   
+                                </select>
+                            </div>
+
+                            <div class="col-10 form group">
+                                <label><b>Select Model:</b></label>
+                                <select class="first" name="car_models" id="car_models" required="1">
+        
+  
+                                </select>
+                            </div>
+
+                            <div class="col-10 form group">
+                                <label><b>Select Year of purchase:</b></label>
+                                <select class="first" name="year" id="year" required="1">
+        
+                                    {% for year in years %}
+        
+        
+                                      <option value="{{ year }}">{{ year }}</option>
+                                   {% endfor %}   
+                                </select>
+                            </div>
+
+                            <div class="col-10 form group">
+                                <label><b>Select Fuel type:</b></label>
+                                <select class="first" name="fuel_type" id="fuel_type" required="1">
+        
+                                    {% for fuel in fuel_types %}
+        
+        
+                                      <option value="{{ fuel }}">{{ fuel }}</option>
+                                   {% endfor %}   
+                                </select>
+                            </div>
+
+                            <div class="col-10 form group">
+                                <label><b>Enter number of kilometers travelled:</b></label>
+                                <input class="form-control" type="text" id="kilo_driven" name="kilo_driven" placeholder="Enter number of kilomeetrs travelled">
+
+                            </div>
+
+                            <div class="col-md-10 form-group" style="text-align: center">
+                                <button  class="btn btn-primary form-control" onclick="send_data()">Predict Price</button>
+                            </div>
+
+                        </form>
+                        <br>
+                        <div class="row">
+                            <div class="col-12" style="text-align: center">
+                                <h4><span id="prediction"></span></h4>
+                            </div>
+                        </div>
+                        
+                        
+                     </div>
+                 </div>   
+            </div>
+            
+
+
+        </div>
+        <div class="thumbnail">
+            <div class="item">
+                <img src="{{ url_for('static', filename='images/2022-f1-car-7-1626364058.jpg') }}" alt="Image">
+                <div class="content">
+                    <div class="title">
+                        Accurate
+                    </div>
+                    <div class="des">
+                        Reliable Report
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="{{ url_for('static', filename='images/360_F_224693468_CGthyeACnALW69HlZq9d6IvgA5vXggQj.jpg') }}" alt="Image">
+                <div class="content">
+                    <div class="title">
+                        Simple
+                    </div>
+                    <div class="des">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="{{ url_for('static', filename='images/wp11706924.jpg') }}" alt="Image">
+                <div class="content">
+                    <div class="title">
+                        Availability
+                    </div>
+                    <div class="des">
+                        Find every car's worth
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+                
+
+        <div class="arrows">
+                <button id="prev"><</button>
+                <button id="next">></button>
+        </div>
+                
+        <div class="time"></div>
+
+    </div>
+
+
+    <script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script>
+            function load_car_models(company_id,car_model_id)
+    {
+        var company=document.getElementById(company_id);
+        var car_model= document.getElementById(car_model_id);
+        console.log(company.value);
+        car_model.value="";
+        car_model.innerHTML="";
+        {% for company in companies %}
+            if( company.value == "{{ company }}")
+            {
+                {% for model in car_models %}
+                    {% if company in model %}
+
+                        var newOption= document.createElement("option");
+                        newOption.value="{{ model }}";
+                        newOption.innerHTML="{{ model }}";
+                        car_model.options.add(newOption);
+                    {% endif %}
+                {% endfor %}
+            }
+        {% endfor %}
+    }
+
+    function form_handler(event) {
+        event.preventDefault(); // Don't submit the form normally
+    }
+    function send_data()
+    {
+        document.querySelector('form').addEventListener("submit",form_handler);
+
+        var fd=new FormData(document.querySelector('form'));
+
+        var xhr= new XMLHttpRequest({mozSystem: true});
+
+        xhr.open('POST','/predict',true);
+        document.getElementById('prediction').innerHTML="Wait! Predicting Price.....";
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState == XMLHttpRequest.DONE){
+                document.getElementById('prediction').innerHTML="Prediction: ₹"+xhr.responseText;
+
+            }
+        };
+
+        xhr.onload= function(){};
+
+        xhr.send(fd);
+    }
+    </script>
+    
+
+</body>
+</html>
