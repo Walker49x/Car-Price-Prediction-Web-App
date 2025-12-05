@@ -70,4 +70,6 @@ http://127.0.0.1:5000/
 
 
 
-<img width="1310" height="608" alt="Screenshot 2025-12-04 215014" src="https://github.com/user-attachments/assets/579be585-a633-44a1-b6cd-fa4892a3693b" />
+<img width="1890" height="833" alt="Screenshot 2025-12-04 215125" src="https://github.com/user-attachments/assets/550689fe-7cd5-4e47-932f-ff496a4b571c" />
+
+<img width="1897" height="837" alt="Screenshot 2025-12-04 215050" src="https://github.com/user-attachments/assets/f2cfc5dd-5788-4b43-92ea-8481727107f0" />
