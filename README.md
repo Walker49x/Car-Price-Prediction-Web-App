@@ -1,30 +1,56 @@
-Car Price Prediction Web App
+🚗 Car Price Prediction Web App
 
-End-to-end machine learning pipeline and Flask web app to predict used car prices.
-Predicts price given name, company, year, kms_driven, and fuel_type. Built with Python, scikit-learn, and Flask, with a carousel-style UI for interactive predictions.
+A Machine-Learning powered Flask web application that predicts the resale price of cars based on historical market data.
 
-Features
+📌 Overview
 
-Data cleaning & feature engineering for mixed categorical/numeric inputs.
+This project integrates an end-to-end ML regression pipeline with a fully responsive web interface.
+Users can select car details like model, company, year, kilometers driven, and fuel type — and instantly get the approximate market price.
 
-Scikit-learn Pipeline (ColumnTransformer + LinearRegression) for robust preprocessing and inference.
+The model is trained on cleaned automotive datasets and achieves strong generalization performance through systematic evaluation and hyperparameter tuning.
 
-Achieved R² ≈ 0.85 after random-state search and evaluation.
+✨ Key Features
 
-Flask web interface for real-time predictions with dropdowns and inputs.
+🔧 Automated ML Pipeline
+Preprocessing + encoding + regression inside a single Scikit-Learn Pipeline
 
-Safe handling of unseen categorical values (OneHotEncoder(handle_unknown='ignore')).
+🎯 High-accuracy Price Prediction
+Achieved R² ≈ 0.85, tested across 1000+ random states
 
-Tech Stack
+🎨 Interactive Web UI
+Built using HTML, CSS & JavaScript, featuring a carousel-style form layout
 
-Python 3.10+
+🌐 Real-time Inference
+Flask backend returns predictions instantly via HTTP POST
 
-Flask
+💪 Robust Categorical Handling
+OneHotEncoder(handle_unknown='ignore') ensures stability with unseen values
 
-pandas, numpy
+🛠 Tech Stack
+Layer	Technologies
+Frontend	HTML, CSS, Vanilla JavaScript
+Backend API	Flask
+ML Tools	Scikit-Learn, Pandas, NumPy
+Model Type	Regression (Linear Regression inside Pipeline)
+Deployment	Local Flask Server (future: cloud deploy)
+📊 Model Workflow
 
-scikit-learn
+1️⃣ Data cleaning & missing-value handling
+2️⃣ Feature engineering (encoding + scaling where needed)
+3️⃣ Train/test split + hyperparameter evaluation
+4️⃣ Export trained pipeline using pickle
+5️⃣ Web app loads the model → predicts from user input
 
-HTML/CSS/JS for frontend (carousel UI)
+🚀 How to Run Locally
+🔹 1️⃣ Install Dependencies
+pip install -r requirements.txt
+
+🔹 2️⃣ Start Flask Server
+python app.py
+
+🔹 3️⃣ Visit the App in Browser
+http://127.0.0.1:5000/
+
+
 
 
