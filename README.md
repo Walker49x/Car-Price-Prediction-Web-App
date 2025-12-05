@@ -36,12 +36,17 @@ Deployment	Local Flask Server (future: cloud deploy)
 📊 Model Workflow
 
 1️⃣ Data cleaning & missing-value handling
+
 2️⃣ Feature engineering (encoding + scaling where needed)
+
 3️⃣ Train/test split + hyperparameter evaluation
+
 4️⃣ Export trained pipeline using pickle
+
 5️⃣ Web app loads the model → predicts from user input
 
 🚀 How to Run Locally
+
 🔹 1️⃣ Install Dependencies
 pip install -r requirements.txt
 
