@@ -1,15 +1,22 @@
 🚗 Car Price Prediction Web App
 
+
 A Machine-Learning powered Flask web application that predicts the resale price of cars based on historical market data.
 
+
+
 📌 Overview
+
 
 This project integrates an end-to-end ML regression pipeline with a fully responsive web interface.
 Users can select car details like model, company, year, kilometers driven, and fuel type — and instantly get the approximate market price.
 
 The model is trained on cleaned automotive datasets and achieves strong generalization performance through systematic evaluation and hyperparameter tuning.
 
+
+
 ✨ Key Features
+
 
 🔧 Automated ML Pipeline
 Preprocessing + encoding + regression inside a single Scikit-Learn Pipeline
