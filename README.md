@@ -40,6 +40,10 @@ Backend API	Flask
 ML Tools	Scikit-Learn, Pandas, NumPy
 Model Type	Regression (Linear Regression inside Pipeline)
 Deployment	Local Flask Server (future: cloud deploy)
+
+
+
+
 📊 Model Workflow
 
 1️⃣ Data cleaning & missing-value handling
